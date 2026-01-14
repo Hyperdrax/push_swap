@@ -60,7 +60,7 @@ int rrb (t_stack_node **stack_b)
 
 // rrr : rra and rrb at the same time.
 
-int	rrr(t_list **stack_a, t_list **stack_b)
+int	rrr(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
 		return (-1);
