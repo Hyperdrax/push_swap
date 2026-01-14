@@ -28,4 +28,30 @@ void			stack_add_back(t_stack_node **stack, t_stack_node *new);
 void			index_stack(t_stack_node **stack);
 void			print_stack(t_stack_node **stack);
 
+// Push
+int push (t_stack_node **stack_to, **stack_from);
+int pa (t_stack_node **stack_a, t_stack_node **stack_b);
+int pb (t_stack_node **stack_a, t_stack_node **stack_b);
+
+// Swap
+int swap (t_stack_node **stack);
+int sa (t_stack_node **stack_a);
+int sb (t_stack_node **stack_b);
+int ss (t_stack_node **stack_a, t_stack_node **stack_b);
+
+// Rotate
+
+int rotate(t_stack_node **stack);
+int ra(t_stack_node **stack_a);
+int rb(t_stack_node **stack_b);
+int	rr(t_list **stack_a, t_list **stack_b);
+
+// Reverse Rotate
+
+int reverse_rotate(t_stack_node **stack);
+int rra (t_stack_node **stack_a);
+int rrb (t_stack_node **stack_b);
+int	rrr(t_stack_node **stack_a, t_stack_node **stack_b);
+
+
 #endif

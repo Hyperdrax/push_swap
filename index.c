@@ -20,7 +20,7 @@ static t_stack_node	*get_next_min(t_stack_node **stack)
 
     min = NULL;
     has_min = 0;
-    current = *stack;  // Dereference here!
+    current = *stack;
     while (current)
     {
         if ((current->index == -1) && (!has_min || current->value < min->value))
