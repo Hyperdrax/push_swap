@@ -37,6 +37,53 @@ void fill_a(t_stack_node **stack, int ac, char** av)
         free(args);
 }
 
+int is_stack_sorted (t_stack_node *stack)
+{
+    t_stack_node *head;
+    head = *stack;
+    while (head && head->next)
+    {
+        if (head->value > head->next->value)
+            return(0);
+        head = head->next; 
+    }
+    return (1);
+}
+
+void sort(t_stack_node **stack_a, t_stack_node **stack_b)
+{
+    int stack_size;
+
+    if (is_stack_sorted(stack_a))
+    {
+        free_stack(stack_a);
+        free_stack(stack_b);
+        exit(0);
+    }
+    stack_size = ft_lstsize(stack_a);
+    if (stack_size == 2)
+        sa(stack_a);
+    else if (stack_size == 3)
+        sort_three(stack_a);
+    else if (stack_size == 4)
+        sort_four(stack_a, stack_b);
+}
+
+void free_stack(t_stack_node **stack)
+{
+    t_stack_node *head;
+    t_stack_node *tmp;
+
+    head = *stack;
+    while (head)
+    {
+        tmp = head;
+        head = head->next;
+        free(tmp);
+    }
+    free(stack);
+}
+
 int main(int ac, char **av)
 {
     t_stack_node **stack_a;
@@ -50,6 +97,6 @@ int main(int ac, char **av)
     *stack_b = NULL;
     fill_a(stack_a, ac, av);
     print_stack(stack_a);
-    // Sort_stack
+    sort(stack_a, stack_b);
     return (0);
 }
