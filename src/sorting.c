@@ -77,3 +77,35 @@ int find_min_index(t_stack_node **stack)
     }
     return (min_index);
 }
+
+void radix_sort(t_stack_node **stack_a, t_stack_node **stack_b)
+{
+    int max_index;
+    int max_bits;
+    int i;
+    int j;
+    int size;
+
+    size = stack_size(*stack_a);
+    max_index = size - 1;
+    max_bits = 0;
+    while ((max_index >> max_bits) != 0)
+        max_bits++;
+    
+    i = 0;
+    while (i < max_bits)
+    {
+        j = 0;
+        while (j < size)
+        {
+            if ((((*stack_a)->index >> i) & 1) == 1)
+                ra(stack_a);
+            else
+                pb(stack_a, stack_b);
+            j++;
+        }
+        while (*stack_b)
+            pa(stack_a, stack_b);
+        i++;
+    }
+}

@@ -58,6 +58,7 @@ int	rrr(t_stack_node **stack_a, t_stack_node **stack_b);
 void sort_three(t_stack_node **stack_a);
 void sort_four(t_stack_node **stack_a, t_stack_node **stack_b);
 int find_min_index(t_stack_node **stack);
+void radix_sort(t_stack_node **stack_a, t_stack_node **stack_b);
 
 // Utility
 int is_stack_sorted(t_stack_node **stack);

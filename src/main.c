@@ -82,6 +82,8 @@ void sort(t_stack_node **stack_a, t_stack_node **stack_b)
         sort_three(stack_a);
     else if (size == 4)
         sort_four(stack_a, stack_b);
+    else
+        radix_sort(stack_a, stack_b);
 }
 
 void free_stack(t_stack_node **stack)
@@ -111,8 +113,8 @@ int main(int ac, char **av)
     *stack_a = NULL;
     *stack_b = NULL;
     fill_a(stack_a, ac, av);
-    print_stack(stack_a);
+    // print_stack(stack_a);
     sort(stack_a, stack_b);
-    print_stack(stack_a);
+    // print_stack(stack_a);
     return (0);
 }
