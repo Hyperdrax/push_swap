@@ -17,10 +17,10 @@ int reverse_rotate(t_stack_node **stack)
 	t_stack_node *head;
 	t_stack_node *tail;
 
-	if (ft_lstsize(*stack) < 2)
+	if (stack_size(*stack) < 2)
 		return(-1);
 	head = *stack;
-	tail = ft_lstlast(head);
+	tail = stack_last(head);
 	while (head)
 	{
 		if (head->next->next == NULL)
@@ -61,10 +61,10 @@ int rrb (t_stack_node **stack_b)
 
 int	rrr(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
+	if ((stack_size(*stack_a) < 2) || (stack_size(*stack_b) < 2))
 		return (-1);
-	reverseRotate(stack_a);
-	reverseRotate(stack_b);
+	reverse_rotate(stack_a);
+	reverse_rotate(stack_b);
 	ft_putendl_fd("rrr", 1);
 	return (0);
 }

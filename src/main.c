@@ -37,7 +37,7 @@ void fill_a(t_stack_node **stack, int ac, char** av)
         free(args);
 }
 
-int is_stack_sorted (t_stack_node *stack)
+int is_stack_sorted (t_stack_node **stack)
 {
     t_stack_node *head;
     head = *stack;
@@ -50,9 +50,24 @@ int is_stack_sorted (t_stack_node *stack)
     return (1);
 }
 
+int stack_size(t_stack_node *stack)
+{
+    int count;
+    t_stack_node *head;
+
+    count = 0;
+    head = stack;
+    while (head)
+    {
+        count++;
+        head = head->next;
+    }
+    return (count);
+}
+
 void sort(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-    int stack_size;
+    int size;
 
     if (is_stack_sorted(stack_a))
     {
@@ -60,12 +75,12 @@ void sort(t_stack_node **stack_a, t_stack_node **stack_b)
         free_stack(stack_b);
         exit(0);
     }
-    stack_size = ft_lstsize(stack_a);
-    if (stack_size == 2)
+    size = stack_size(*stack_a);
+    if (size == 2)
         sa(stack_a);
-    else if (stack_size == 3)
+    else if (size == 3)
         sort_three(stack_a);
-    else if (stack_size == 4)
+    else if (size == 4)
         sort_four(stack_a, stack_b);
 }
 
@@ -98,5 +113,6 @@ int main(int ac, char **av)
     fill_a(stack_a, ac, av);
     print_stack(stack_a);
     sort(stack_a, stack_b);
+    print_stack(stack_a);
     return (0);
 }

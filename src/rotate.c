@@ -17,14 +17,14 @@ int rotate(t_stack_node **stack)
 	t_stack_node *head;
 	t_stack_node *tail;
 
-	if (ft_lstsize(*stack) < 2)
+	if (stack_size(*stack) < 2)
 		return(-1);
 	head = *stack;
-	tail = ft_lstlast(head);
+	tail = stack_last(head);
 	*stack = head->next;
 	head->next = NULL;
 	tail->next = head;
-	return (0)
+	return (0);
 }
 
 // ra (rotate a): Shift up all elements of stack a by 1.
@@ -34,7 +34,7 @@ int ra(t_stack_node **stack_a)
 {
 	if (rotate(stack_a) == -1)
 		return (-1);
-	ft_putendl_fd("ra",1)
+	ft_putendl_fd("ra",1);
 	return (0);
 }
 
@@ -45,15 +45,15 @@ int rb(t_stack_node **stack_b)
 {
 	if (rotate(stack_b) == -1)
 		return (-1);
-	ft_putendl_fd("rb",1)
+	ft_putendl_fd("rb",1);
 	return (0);
 }
 
 // rr : ra and rb at the same time.
 
-int	rr(t_list **stack_a, t_list **stack_b)
+int	rr(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
+	if ((stack_size(*stack_a) < 2) || (stack_size(*stack_b) < 2))
 		return (-1);
 	rotate(stack_a);
 	rotate(stack_b);

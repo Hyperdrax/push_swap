@@ -12,13 +12,13 @@
 
 #include "push_swap.h"
 
-int push (t_stack_node **stack_to, **stack_from)
+int push (t_stack_node **stack_to, t_stack_node **stack_from)
 {
 	t_stack_node	*tmp;
 	t_stack_node	*head_to;
 	t_stack_node	*head_from;
 
-	if (ft_lstsize(*stack_from) == 0)
+	if (stack_size(*stack_from) == 0)
 		return (-1);
 	head_to = *stack_to;
 	head_from = *stack_from;

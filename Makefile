@@ -2,8 +2,8 @@ NAME = push_swap
 SRCS = $(wildcard src/*.c)
 OBJS = $(SRCS:.c=.o)
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -I.
 RM = rm -f
 LIBFT = ./libft/libft.a
 

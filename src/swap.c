@@ -19,14 +19,14 @@ int swap (t_stack_node **stack)
 	int tmp_val;
 	int tmp_index;
 
-	if (ft_lstsize(*stack) < 2)
+	if (stack_size(*stack) < 2)
 		return (-1);
 	head = *stack;
 	next = head->next;
 	if (!head && !next)
 	{
-		ft_putendl_fd("Error")
-		exit(0)
+		ft_putendl_fd("Error", 1);
+		exit(0);
 	}
 	tmp_val = head->value;
 	tmp_index = head->index;
@@ -63,7 +63,7 @@ int sb (t_stack_node **stack_b)
 
 int ss (t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	if (ft_lstsize(*stack_a) < 2 || (ft_lstsize(*stack_b) < 2))
+	if (stack_size(*stack_a) < 2 || (stack_size(*stack_b) < 2))
 		return(-1);
 	swap(stack_a);
 	swap(stack_b);
