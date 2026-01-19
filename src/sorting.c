@@ -6,7 +6,7 @@
 /*   By: flhensel <flhensel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 12:48:48 by flhensel          #+#    #+#             */
-/*   Updated: 2026/01/19 12:57:05 by flhensel         ###   ########.fr       */
+/*   Updated: 2026/01/19 13:24:41 by flhensel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	find_min_index(t_stack_node **stack)
 	return (min_index);
 }
 
-int	max_bits(int max_index)
+int	get_max_bits(int max_index)
 {
 	int	max_bits;
 
@@ -104,7 +104,7 @@ void	radix_sort(t_stack_node **stack_a, t_stack_node **stack_b)
 
 	size = stack_size(*stack_a);
 	max_index = size - 1;
-	max_bits = max_bits(max_index);
+	max_bits = get_max_bits(max_index);
 	i = 0;
 	while (i < max_bits)
 	{
