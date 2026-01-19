@@ -6,7 +6,7 @@
 /*   By: flhensel <flhensel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 11:51:44 by flhensel          #+#    #+#             */
-/*   Updated: 2026/01/19 13:04:14 by flhensel         ###   ########.fr       */
+/*   Updated: 2026/01/19 14:57:03 by flhensel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,13 @@ int				stack_size(t_stack_node *stack);
 void			sort_four(t_stack_node **stack_a, t_stack_node **stack_b);
 void			free_stack(t_stack_node **stack);
 void			radix_sort(t_stack_node **stack_a, t_stack_node **stack_b);
+int				is_valid_num(const char *s);
+int				check_int_overflow(const char *s, int *out);
+int				get_count(char **args, int start);
+//static int	is_numeric_token(const char *s);
+//static int	parse_to_int_safe(const char *s, int *out);
+//static void	print_error(void);
+//static int	count_tokens(int ac, char **args);
+int				validate_inputs(int ac, char **av);
 
 #endif

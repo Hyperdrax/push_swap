@@ -6,7 +6,7 @@
 /*   By: flhensel <flhensel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 11:53:36 by flhensel          #+#    #+#             */
-/*   Updated: 2026/01/19 12:46:01 by flhensel         ###   ########.fr       */
+/*   Updated: 2026/01/19 14:40:25 by flhensel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ int	main(int ac, char **av)
 
 	if (ac < 2)
 		return (-1);
+	if (!validate_inputs(ac, av))
+		return (1);
 	stack_a = (t_stack_node **)malloc(sizeof(t_stack_node));
 	stack_b = (t_stack_node **)malloc(sizeof(t_stack_node));
 	*stack_a = NULL;
