@@ -6,7 +6,7 @@
 /*   By: flhensel <flhensel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 11:53:36 by flhensel          #+#    #+#             */
-/*   Updated: 2026/01/19 14:40:25 by flhensel         ###   ########.fr       */
+/*   Updated: 2026/01/19 15:19:12 by flhensel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ void	sort(t_stack_node **stack_a, t_stack_node **stack_b)
 		sort_three(stack_a);
 	else if (size == 4)
 		sort_four(stack_a, stack_b);
+	else if (size == 5)
+		sort_five(stack_a, stack_b);
 	else
 		radix_sort(stack_a, stack_b);
 }
