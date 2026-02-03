@@ -1,5 +1,3 @@
-# push_swap
-
 *This project has been created as part of the 42 curriculum by flhensel.*
 
 ## Description
@@ -100,4 +98,18 @@ The implementation uses different sorting strategies based on input size:
 
 ### AI Usage
 
-AI was used in this project for Understanding the Topic, Code Organization, Testing & Validation. All code was verified for correctness and understanding by me.
+AI was used in this project for:
+
+1. **Understanding the Topic**:
+   - Researching sorting algorithms and push_swap strategies
+   - Understanding radix sort implementation
+
+2. **Code Organization**:
+   - Restructuring code to comply with 42 Norm requirements
+   - Splitting functions across files (sorting.c and sorting_utils.c)
+
+3. **Testing & Validation**:
+   - Creating test commands for various input sizes
+   - Analyzing performance and operation counts
+
+All code was written and verified for correctness and understanding by me. AI was used as a learning tool and for optimization suggestions, but all algorithmic decisions and implementations were my own work.
