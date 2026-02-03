@@ -6,7 +6,7 @@
 /*   By: flhensel <flhensel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 12:48:48 by flhensel          #+#    #+#             */
-/*   Updated: 2026/01/19 13:24:41 by flhensel         ###   ########.fr       */
+/*   Updated: 2026/02/03 13:07:31 by flhensel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,30 +60,6 @@ void	sort_four(t_stack_node **stack_a, t_stack_node **stack_b)
 	pa(stack_a, stack_b);
 }
 
-int	find_min_index(t_stack_node **stack)
-{
-	t_stack_node	*head;
-	int				min;
-	int				index;
-	int				min_index;
-
-	head = *stack;
-	min = head->value;
-	index = 0;
-	min_index = 0;
-	while (head)
-	{
-		if (head->value < min)
-		{
-			min = head->value;
-			min_index = index;
-		}
-		head = head->next;
-		index++;
-	}
-	return (min_index);
-}
-
 int	get_max_bits(int max_index)
 {
 	int	max_bits;
@@ -92,6 +68,25 @@ int	get_max_bits(int max_index)
 	while ((max_index >> max_bits) != 0)
 		max_bits++;
 	return (max_bits);
+}
+
+void	simple_sort(t_stack_node **stack_a, t_stack_node **stack_b)
+{
+	int	size;
+	int	pushed;
+
+	size = stack_size(*stack_a);
+	pushed = 0;
+	while (size > 3)
+	{
+		rotate_to_min(stack_a);
+		pb(stack_a, stack_b);
+		pushed++;
+		size--;
+	}
+	sort_three(stack_a);
+	while (pushed--)
+		pa(stack_a, stack_b);
 }
 
 void	radix_sort(t_stack_node **stack_a, t_stack_node **stack_b)

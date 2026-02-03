@@ -6,7 +6,7 @@
 /*   By: flhensel <flhensel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 11:51:44 by flhensel          #+#    #+#             */
-/*   Updated: 2026/01/19 15:15:43 by flhensel         ###   ########.fr       */
+/*   Updated: 2026/02/03 13:07:31 by flhensel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int				stack_size(t_stack_node *stack);
 void			sort_four(t_stack_node **stack_a, t_stack_node **stack_b);
 void			free_stack(t_stack_node **stack);
 void			radix_sort(t_stack_node **stack_a, t_stack_node **stack_b);
+void			simple_sort(t_stack_node **stack_a, t_stack_node **stack_b);
+void			rotate_to_min(t_stack_node **a);
 int				is_valid_num(const char *s);
 int				check_int_overflow(const char *s, int *out);
 int				get_count(char **args, int start);
